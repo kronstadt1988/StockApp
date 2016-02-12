@@ -1,0 +1,69 @@
+<!doctype html>
+<html ng-app="app">
+	<head>
+		<link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+		<script src="../node_modules/angular/angular.js"></script>
+		<script src="../node_modules/angular-route/angular-route.js"></script>
+		<script src="../node_modules/angular-animate/angular-animate.js"></script>
+		<script src="js/script.js"></script>
+		<!--<script src="js/app.js"></script>
+		<script src="js/app-factories.js"></script>
+		<script src="js/app-controllers.js"></script>-->
+	</head>
+	<body>
+		<div ng-view ng-animate="fadeng" class="fadeng"></div>
+		<script type="text/ng-template" id="index.html">
+			<div class="row">
+				<div class="container-fluid">
+					<nav class="navbar navbar-inverse">
+						<ul class="nav navbar-nav">
+							<li>
+								<a>
+									<div nav-directive-message></div>
+								</a>
+			  				</li>
+						</ul>
+					</nav>
+				</div>
+
+				<div class="container-fluid">
+					<div class="col-xs-6">
+						<div class="form-group">
+							<input type="text" class="form-control" ng-model="name" placeholder="Name of the Product">
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" ng-model="code" placeholder="Code of the Product">
+						</div>
+						<div class="form-group">
+							<input type="number" class="form-control" ng-model="quantity" placeholder="Quantity">
+						</div>
+						<button class="btn btn-success" ng-click="addProduct();">
+							Add Product
+						</button>
+					</div>
+					<div class="col-xs-6">
+						<table class="table table-striped">
+							<tr>
+								<th>Name</th>
+								<th>Code</th>
+								<th>Quantity</th>
+								<th>Actions</th>
+							</tr>
+							<tr ng-repeat="item in store">
+								<td>{{item.name}}</td>
+								<td>{{item.code}}</td>
+								<td>{{item.quantity}}</td>
+								<td>
+									<button class="btn btn-danger" ng-click="removeProduct(item.code);">
+										Delete
+									</button>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</script>
+	</body>
+</html>	

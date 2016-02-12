@@ -1,0 +1,20 @@
+.fadeng.ng-enter {
+ 	transition:1s linear all !important;
+ 	opacity:0 !important;
+}
+
+.fadeng.ng-enter .ng-enter-active {
+ 	opacity:1 !important;
+}
+
+.fadeng.ng-leave {
+ 	transition:0.5s linear all !important;
+	opacity:1 !important;
+}
+.fadeng.ng-leave.ng-leave-active {
+	opacity:0 !important;
+}
+
+.row{
+	margin-right:0;
+}
